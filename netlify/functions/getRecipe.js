@@ -14,11 +14,12 @@ export async function handler(event, context) {
     const prompt = `${SYSTEM_PROMPT}\n\nIngredients: ${ingredientsString}`;
 
     const response = await hf.chatCompletion({
-      model: "HuggingFaceH4/zephyr-7b-beta",
-      inputs: prompt,
-      parameters: {
-        max_new_tokens: 512,
-      },
+        model: "HuggingFaceH4/zephyr-7b-beta",
+        messages: [
+          { role: "system", content: SYSTEM_PROMPT },
+          { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
+        ],
+        max_tokens: 512,
     });
 
     return {
