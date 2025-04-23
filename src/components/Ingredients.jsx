@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
+import {getRecipeFromMistral} from "../netlify/functions/getRecipe.js"
+
 
 function Ingredients() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState(false);
+  const [recipeData, setRecipeData] = useState({});
 
   const ingredientsList = ingredients.map((ing, index) => {
     return <li className="list-disc" key={index}>{ing}</li>}
@@ -15,8 +18,10 @@ function Ingredients() {
     setIngredients(prev => [...prev, ingr])
   }
 
-  function getRecipe(){
-    setRecipe(prev => !prev)
+  async function getRecipe(){
+    setRecipe(prev => !prev);
+    const recipeIdea = await getRecipeFromMistral(ingredients)
+    console.log(recipeIdea);
   }
 
   return (
