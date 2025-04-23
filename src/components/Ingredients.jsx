@@ -59,7 +59,7 @@ function Ingredients() {
           </div>}
         </div>}
         
-        {recipe && <Recipe recipeData={data.recipe} />}
+        {recipe && <Recipe recipeData={recipeData} />}
       </div>
     
     </>
