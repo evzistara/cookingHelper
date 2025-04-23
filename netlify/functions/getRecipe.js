@@ -14,7 +14,7 @@ export async function handler(event, context) {
     const prompt = `${SYSTEM_PROMPT}\n\nIngredients: ${ingredientsString}`;
 
     const response = await hf.chatCompletion({
-        model: "HuggingFaceH4/zephyr-7b-beta",
+        model: "mistral-community/Mistral-7B-Instruct-v0.1",
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
