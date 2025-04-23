@@ -9,7 +9,7 @@ function Recipe(props){
 
 <h2 className="text-4xl">Suggested recipe</h2>
 <div className="prose max-w-none">
-        <ReactMarkdown>{recipeData}</ReactMarkdown>
+        <ReactMarkdown>{props.recipeData}</ReactMarkdown>
       </div>
 </div>
     )
