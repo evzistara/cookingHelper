@@ -28,7 +28,7 @@ function Ingredients() {
       const data = await res.json();
       setRecipeData(data.recipe);
 
-      console.log(recipeData);
+      console.log(data);
   }
 
   return (

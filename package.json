@@ -8,10 +8,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-     "predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@huggingface/inference": "^3.8.2",
     "@tailwindcss/vite": "^4.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
