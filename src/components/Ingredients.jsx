@@ -5,7 +5,7 @@ import Recipe from "./Recipe";
 function Ingredients() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState(false);
-  const [recipeData, setRecipeData] = useState({});
+  const [recipeData, setRecipeData] = useState("");
 
   const ingredientsList = ingredients.map((ing, index) => {
     return <li className="list-disc" key={index}>{ing}</li>}
@@ -20,15 +20,23 @@ function Ingredients() {
   async function getAIRecipe(){
     setRecipe(prev => !prev);
 
-    const res = await fetch("/.netlify/functions/getRecipe", {
-        method: "POST",
-        body: JSON.stringify({ ingredients }),
-      });
-   
-      const data = await res.json();
-      setRecipeData(data.recipe);
-
-      console.log(data);
+        try {
+      
+          const prompt = `I have ${ingredients.join(", ")}. Give me a simple recipe I can make. Format it in markdown.`;
+      
+          const response = await fetch("https://huggingface.co/spaces/HuggingFaceH4/zephyr-chat/api/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: [prompt] }),
+          });
+      
+          const data = await response.json();
+          setRecipeData(data.data[0]);
+      
+        } catch (error) {
+          console.error("Recipe fetch failed:", error);
+          setRecipeData("Oops! Something went wrong. Try again.");
+        }
   }
 
   return (
@@ -63,7 +71,7 @@ function Ingredients() {
           </div>}
         </div>}
         
-        {recipe && <Recipe />}
+        {recipe && <Recipe recipeData={recipeData} />}
       </div>
     
     </>
