@@ -15,7 +15,7 @@ export async function handler(event, context) {
     const ingredientsString = body.ingredients.join(", ");
 
     const msg = await anthropic.messages.create({
-      model: "claude-3-sonnet",
+      model: "claude-3-5-sonnet-20241022",
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages: [
