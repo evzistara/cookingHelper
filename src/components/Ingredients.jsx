@@ -17,7 +17,7 @@ function Ingredients() {
     setIngredients(prev => [...prev, ingr])
   }
 
-  async function getRecipe(){
+  async function getAIRecipe(){
     setRecipe(prev => !prev);
 
     const res = await fetch("/.netlify/functions/getRecipe", {
@@ -28,7 +28,7 @@ function Ingredients() {
       const data = await res.json();
       setRecipeData(data.recipe);
 
-      console.log();
+      console.log(recipeData);
   }
 
   return (
@@ -59,7 +59,7 @@ function Ingredients() {
               <p className="text-md font-semi">Ready for a recipe?</p>
               <p className="text-sm text-gray-400">Generate a recipe from your list of ingredients.</p>
             </div>
-            <button className="bg-orange-400 py-2 px-4 rounded-md text-white" onClick={getRecipe}>Get a recipe</button>
+            <button className="bg-orange-400 py-2 px-4 rounded-md text-white" onClick={getAIRecipe}>Get a recipe</button>
           </div>}
         </div>}
         
