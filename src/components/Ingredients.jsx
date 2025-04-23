@@ -20,8 +20,13 @@ function Ingredients() {
 
   async function getAIRecipe(){
     setRecipe(prev => !prev);
-    const  response = await getRecipeFromChefClaude(ingredients);
-    console.log(response);
+    const response = await fetch("/.netlify/functions/getRecipe", {
+        method: "POST",
+        body: JSON.stringify({ ingredients }),
+      });
+      const data = await response.json();
+      setRecipeData(data.recipe);
+      
 
 
   }
