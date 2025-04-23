@@ -13,8 +13,8 @@ export async function handler(event, context) {
 
     const prompt = `${SYSTEM_PROMPT}\n\nIngredients: ${ingredientsString}`;
 
-    const response = await hf.textGeneration({
-      model: "google/flan-t5-large",
+    const response = await hf.chatCompletion({
+      model: "HuggingFaceH4/zephyr-7b-beta",
       inputs: prompt,
       parameters: {
         max_new_tokens: 512,
