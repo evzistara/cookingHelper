@@ -24,9 +24,7 @@ function Ingredients() {
         body: JSON.stringify({ ingredients }),
       });
       const data = await response.json();
-      console.log(data);
-      console.log(data.recipe);
-      setRecipeData(data);
+      setRecipeData(data.recipe);
 
   }
   return (
@@ -61,7 +59,7 @@ function Ingredients() {
           </div>}
         </div>}
         
-        {recipe && <Recipe recipeData={recipeData} />}
+        {recipe && <Recipe recipeData={data.recipe} />}
       </div>
     
     </>
