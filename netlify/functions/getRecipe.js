@@ -6,7 +6,7 @@ You are an assistant that receives a list of ingredients that a user has and sug
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
-  dangerouslyAllowBrowser: true, // this is fine for serverless functions
+  dangerouslyAllowBrowser: true,
 });
 
 export async function handler(event, context) {
@@ -15,7 +15,7 @@ export async function handler(event, context) {
     const ingredientsString = body.ingredients.join(", ");
 
     const msg = await anthropic.messages.create({
-      model: "claude-3-sonnet-20240229", // make sure this version is correct
+      model: "claude-3-sonnet",
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages: [
