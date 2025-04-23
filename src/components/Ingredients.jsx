@@ -20,8 +20,16 @@ function Ingredients() {
 
   async function getRecipe(){
     setRecipe(prev => !prev);
-    const recipeIdea = await getRecipeFromMistral(ingredients)
-    console.log(recipeIdea);
+    
+    const res = await fetch("/.netlify/functions/getRecipe", {
+        method: "POST",
+        body: JSON.stringify({ ingredients }),
+      });
+   
+      const data = await res.json();
+      setRecipeData(data.recipe);
+
+      console.log();
   }
 
   return (
