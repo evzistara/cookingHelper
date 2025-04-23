@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
-import { getRecipeFromChefClaude } from "../../netlify/functions/getRecipe";
 
 
 function Ingredients() {
@@ -27,9 +26,7 @@ function Ingredients() {
       const data = await response.json();
       console.log(data);
       console.log(data.recipe);
-      setRecipeData(data.recipe);
-      
-
+      setRecipeData(data);
 
   }
   return (
