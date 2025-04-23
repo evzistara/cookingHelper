@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 
 function Recipe(props){
 
-    
+    console.log(props.recipeData)
 
     return(
 <div>
