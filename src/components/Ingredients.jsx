@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
+import { getRecipeFromChefClaude } from "../../netlify/functions/getRecipe";
 
 
 function Ingredients() {
@@ -19,26 +20,11 @@ function Ingredients() {
 
   async function getAIRecipe(){
     setRecipe(prev => !prev);
+    const  response = await getRecipeFromChefClaude(ingredients);
+    console.log(response);
 
-        try {
-      
-          const prompt = `I have ${ingredients.join(", ")}. Give me a simple recipe I can make. Format it in markdown.`;
-      
-          const response = await fetch("https://huggingface.co/spaces/HuggingFaceH4/zephyr-chat/api/predict", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ data: [prompt] }),
-          });
-      
-          const data = await response.json();
-          setRecipeData(data.data[0]);
-      
-        } catch (error) {
-          console.error("Recipe fetch failed:", error);
-          setRecipeData("Oops! Something went wrong. Try again.");
-        }
+
   }
-
   return (
     <>
       <div className="w-3xl mx-auto m-10">

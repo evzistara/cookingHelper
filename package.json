@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@huggingface/inference": "^3.8.2",
     "@tailwindcss/vite": "^4.1.4",
     "react": "^19.0.0",
