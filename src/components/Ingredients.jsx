@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
-import {getRecipeFromMistral} from "../netlify/functions/getRecipe.js"
 
 
 function Ingredients() {
@@ -20,7 +19,7 @@ function Ingredients() {
 
   async function getRecipe(){
     setRecipe(prev => !prev);
-    
+
     const res = await fetch("/.netlify/functions/getRecipe", {
         method: "POST",
         body: JSON.stringify({ ingredients }),
