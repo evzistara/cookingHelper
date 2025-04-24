@@ -17,10 +17,10 @@ Do you need help with inspiration for your cooking? Add ingredients that you hav
 
 ## Design
 ### Original design from Scrimba
-![Figma design of Chef Claud webside]('/src/assets/Design.png')
+![Figma design of Chef Claud webside]('./assets/Design.png')
 
 ### My take
-![Print screen of website Chef Claude]('/src/assets/cookingHelper.png)
+![Print screen of website Chef Claude]('./assets/cookingHelper.png)
 
 ## Installation
 npm install
