@@ -29,7 +29,7 @@ function Ingredients() {
   }
   return (
     <>
-      <div className="w-3xl mx-auto my-20">
+      <div className="mx-10 md:w-xl md:mx-auto xl:w-3xl  xl:my-20">
         <h2 className="text-4xl text-center my-8">What do you have in your fridge? 🤔</h2>
         <form className="flex justify-between items-center" action={addIngredients}>
           <input
