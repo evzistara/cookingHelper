@@ -7,9 +7,9 @@ function Recipe(props){
     return(
 <div className="bg-white rounded-xl p-5">
 
-<div className="prose max-w-none">
+<div>
     <h2 className="text-3xl">Suggested recipe</h2>
-        <ReactMarkdown>{String(props.recipeData)}</ReactMarkdown>
+        <ReactMarkdown>{props.recipeData}</ReactMarkdown>
       </div>
 </div>
     )
