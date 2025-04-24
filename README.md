@@ -1,12 +1,31 @@
-# React + Vite
+# AI-powered Cooking Helper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is originaly a project from Scrimba course [Learn React](https://scrimba.com/learn-react-c0e). I took the idea and coded website on my own, adding extra design elements. The AI part (getRecipe.js) was made with help of ChatGPT. All of the other code is original work.
 
-Currently, two official plugins are available:
+## Description
+Do you need help with inspiration for your cooking? Add ingredients that you have in yout kitchen and this kitchenHelper will give you suggestion for a recipe based on the ingredients you have. It might throw in a few extras if it's needed. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
+- Frontend: React (Vite)
+- Styling: Tailwind CSS
+- Markdown Rendering: react-markdown
+- AI: Claude 3 Sonnet (via @anthropic-ai/sdk)
+- Backend: Netlify serverless function
 
-## Expanding the ESLint configuration
+## Link
+[Site](https://cookinghelper13.netlify.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Design
+### Original design from Scrimba
+![Figma design of Chef Claud webside]('/src/assets/Design.png')
+
+### My take
+![Print screen of website Chef Claude]('/src/assets/cookingHelper.png)
+
+## Installation
+npm install
+For use of AI you need your own API key
+ANTHROPIC_API_KEY=your-claude-api-key
+
+## Future ideas
+- Delete unwanted ingredients

@@ -43,7 +43,7 @@ function Ingredients() {
             + Add ingredient
           </button>
         </form>
-        <div className="border border border-white bg-white text-sm border-2 rounded-md my-4 py-2 px-4 w-fit mx-auto flex gap-5 items-center">
+        <div className=" border-white bg-white text-sm border-2 rounded-md my-4 py-2 px-4 w-fit mx-auto flex gap-5 items-center">
           <p className="bg-outline rounded-md p-2">❓</p>
           <div>
           <p>Add one ingredient at a time</p>
