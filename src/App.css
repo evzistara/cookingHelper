@@ -2,8 +2,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #fdf6f0;
 }
 
 @theme {
-  --color-background: #F0EFEB;
+  --color-button: #c3aed6;
+  --color-background: #6b5b95;
+  --color-outline: #d4c2ec;
+
 }
