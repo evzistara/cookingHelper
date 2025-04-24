@@ -5,11 +5,11 @@ function Recipe(props){
     console.log(props.recipeData)
 
     return(
-<div className="bg-white rounded-xl p-2">
+<div className="bg-white rounded-xl p-5">
 
-<h2 className="text-3xl">Suggested recipe</h2>
 <div className="prose max-w-none">
-        <ReactMarkdown>{props.recipeData}</ReactMarkdown>
+    <h2 className="text-3xl">Suggested recipe</h2>
+        <ReactMarkdown>{String(props.recipeData)}</ReactMarkdown>
       </div>
 </div>
     )
