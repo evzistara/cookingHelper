@@ -6,14 +6,14 @@ This is originaly a project from Scrimba course [Learn React](https://scrimba.co
 Do you need help with inspiration for your cooking? Add ingredients that you have in yout kitchen and this kitchenHelper will give you suggestion for a recipe based on the ingredients you have. It might throw in a few extras if it's needed. 
 
 ## Stack
-- Frontend: React (Vite)
-- Styling: Tailwind CSS
-- Markdown Rendering: react-markdown
-- AI: Claude 3 Sonnet (via @anthropic-ai/sdk)
-- Backend: Netlify serverless function
+- Frontend: `React (Vite)`
+- Styling: `Tailwind CSS`
+- Markdown Rendering: `react-markdown`
+- AI: `Claude 3 Sonnet (via @anthropic-ai/sdk)`
+- Backend: `Netlify serverless function`
 
 ## Link
-[Site](https://cookinghelper13.netlify.app/)
+[Visit my CookingHelper here](https://cookinghelper13.netlify.app/)
 
 ## Design
 ### Original design from Scrimba
